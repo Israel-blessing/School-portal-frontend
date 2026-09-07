@@ -117,6 +117,7 @@ function Programmedetails({
                     ))}
                   </select>
                 </div>
+                  <div className="input-group">
                 <select
                   name="sessionId"
                   value={enrollment.sessionId}
@@ -124,6 +125,7 @@ function Programmedetails({
                   required
                 >
                   <option value="">Select Session</option>
+                   <label>Session*</label>
 
                   {sessionId.map((session) => (
                     <option key={session.id} value={session.id}>
@@ -131,6 +133,7 @@ function Programmedetails({
                     </option>
                   ))}
                 </select>
+                </div>
               </div>
 
               <div className="form-row">
