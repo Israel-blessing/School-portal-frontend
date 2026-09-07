@@ -10,7 +10,6 @@ import Biodata from "./Components/bio-data";
 import Programmedata from "./Components/programme";
 import Documentdata from "./Components/documents/Documentdata";
 
-
 interface IEnrollment {
   firstName: String;
   lastName: String;
@@ -34,7 +33,7 @@ interface IEnrollment {
   birthCertificate: String;
   waecResult: String;
   jambResult: String;
-  sessionId: Number;
+  sessionId: Number | null;
   status: "PENDING" | "APPROVED" | "REJECTED" | "IN_PROGRESS";
 }
 
@@ -61,7 +60,7 @@ const enrollmentForm: IEnrollment = {
   birthCertificate: "",
   waecResult: "",
   jambResult: "",
-  sessionId: 0,
+  sessionId: null,
   status: "IN_PROGRESS",
 };
 
@@ -73,7 +72,6 @@ function Application() {
   // const [submiting, setSubmiting] = useState<boolean>(false);
   const [isPending, setIsPending] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
-  
 
   // const [pendingloading, setpendingloading] = useState<boolean>(true);
 
@@ -134,6 +132,9 @@ function Application() {
         value = Number(value);
       }
       if (target === "departmentId") {
+        value = Number(value);
+      }
+      if (target === "sessionId") {
         value = Number(value);
       }
       return {
