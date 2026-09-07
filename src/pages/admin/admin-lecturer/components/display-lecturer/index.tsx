@@ -68,6 +68,11 @@ function Displaylecturer({ refresh }: DisplaylecturerProps) {
                 <div key={index} className="skeleton-line" />
               ))}
             </div>
+          ) : lecturer.length === 0 ? (
+            <div className="empty-table-state">
+              <h3>No lecturers yet</h3>
+              <p> Assign a lecturer </p>
+            </div>
           ) : (
             <table>
               <thead>
