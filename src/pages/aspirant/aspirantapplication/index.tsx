@@ -24,8 +24,8 @@ interface IEnrollment {
   lga: String;
   currentState: String;
   currentstateLGA: String;
-  facultyId: Number;
-  departmentId: Number;
+  facultyId: Number | null;
+  departmentId: Number | null;
   jambRegistrationNumber: String;
   jambScore: Number;
   waecAggregate: Number;
@@ -33,6 +33,7 @@ interface IEnrollment {
   birthCertificate: String;
   waecResult: String;
   jambResult: String;
+  sessionId: Number | null;
 
   status: "PENDING" | "APPROVED" | "REJECTED" | "IN_PROGRESS";
 }
@@ -51,8 +52,9 @@ const enrollmentForm: IEnrollment = {
   ninNumber: "",
   currentState: "",
   currentstateLGA: "",
-  facultyId: 0,
-  departmentId: 0,
+  facultyId: null,
+  departmentId: null,
+  sessionId: null,
   jambRegistrationNumber: "",
   jambScore: 0,
   waecAggregate: 0,
@@ -134,7 +136,9 @@ function Application() {
       if (target === "departmentId") {
         value = Number(value);
       }
-
+      if (target === "sessionId") {
+        value = Number(value);
+      }
       return {
         ...prev,
         [e.target.name]: value,
