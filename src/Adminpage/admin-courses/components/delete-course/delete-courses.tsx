@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { revokeadmission } from "../../api/enrollment.api";
+import { deleteCourse } from "../../../../api/course.api";
 
 import {
   Button,
@@ -12,41 +12,37 @@ import {
 
 import LoadingButton from "@mui/lab/LoadingButton";
 
-interface Revokeadmissionprops {
+interface DeletecourseProps {
   id: number;
-  fetchadmission: () => Promise<void>;
-  removeadmission: (id: number) => void;
+  fetchcourse: () => Promise<void>;
+  removecourse: (id: number) => void;
 }
 
-function Revokeadmission({
-  id,
-  fetchadmission,
-  removeadmission,
-}: Revokeadmissionprops) {
+function DeleteCourse({ id, fetchcourse, removecourse }: DeletecourseProps) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleDelete = async () => {
     setLoading(true);
 
-    removeadmission(id);
+    removecourse(id);
 
     try {
-      const deleted = await revokeadmission(id);
+      const deleted = await deleteCourse(id);
 
       if (deleted) {
-        console.log("Admission Revoked ");
+        console.log("Department Deleted");
 
-        await fetchadmission();
+        await fetchcourse();
 
         setOpen(false);
       } else {
-        await fetchadmission();
+        await fetchcourse();
       }
     } catch (error) {
       console.log(error);
 
-      await fetchadmission();
+      await fetchcourse();
     } finally {
       setLoading(false);
     }
@@ -70,7 +66,7 @@ function Revokeadmission({
           marginTop: "-4px",
         }}
       >
-        Revoke
+        Delete
       </Button>
 
       <Dialog
@@ -81,12 +77,12 @@ function Revokeadmission({
           }
         }}
       >
-        <DialogTitle>Revoke Admission</DialogTitle>
+        <DialogTitle>Delete Course</DialogTitle>
 
         <DialogContent>
           <DialogContentText>
-            Are you sure you want Revoke this applicant admission? This action
-            cannot be undone.
+            Are you sure you want to delete this Course? This action cannot be
+            undone.
           </DialogContentText>
         </DialogContent>
 
@@ -101,7 +97,7 @@ function Revokeadmission({
             loading={loading}
             onClick={handleDelete}
           >
-            Revoke
+            Delete
           </LoadingButton>
         </DialogActions>
       </Dialog>
@@ -109,4 +105,4 @@ function Revokeadmission({
   );
 }
 
-export default Revokeadmission;
+export default DeleteCourse;

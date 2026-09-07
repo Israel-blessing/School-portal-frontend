@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getEnrollmentById, approveEnrollment } from "../../api/enrollment.api";
+import {
+  getEnrollmentById,
+  approveEnrollment,
+} from "../../../api/enrollment.api";
 import "./admin-aspirant.css";
 import Revokeadmission from "./revokeadmission";
 

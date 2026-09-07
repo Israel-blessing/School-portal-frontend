@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deleteDepartment } from "../../api/department.api";
+import { revokeadmission } from "../../../api/enrollment.api";
 
 import {
   Button,
@@ -12,41 +12,41 @@ import {
 
 import LoadingButton from "@mui/lab/LoadingButton";
 
-interface DeleteDepartmentProps {
+interface Revokeadmissionprops {
   id: number;
-  fetchDepartments: () => Promise<void>;
-  removeDepartment: (id: number) => void;
+  fetchadmission: () => Promise<void>;
+  removeadmission: (id: number) => void;
 }
 
-function DeleteDepartment({
+function Revokeadmission({
   id,
-  fetchDepartments,
-  removeDepartment,
-}: DeleteDepartmentProps) {
+  fetchadmission,
+  removeadmission,
+}: Revokeadmissionprops) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleDelete = async () => {
     setLoading(true);
 
-    removeDepartment(id);
+    removeadmission(id);
 
     try {
-      const deleted = await deleteDepartment(id);
+      const deleted = await revokeadmission(id);
 
       if (deleted) {
-        console.log("Department Deleted");
+        console.log("Admission Revoked ");
 
-        await fetchDepartments();
+        await fetchadmission();
 
         setOpen(false);
       } else {
-        await fetchDepartments();
+        await fetchadmission();
       }
     } catch (error) {
       console.log(error);
 
-      await fetchDepartments();
+      await fetchadmission();
     } finally {
       setLoading(false);
     }
@@ -67,10 +67,10 @@ function DeleteDepartment({
           boxShadow: "none",
           minWidth: "auto",
           height: "30px",
-          marginTop: "-4px"
+          marginTop: "-4px",
         }}
       >
-        Delete
+        Revoke
       </Button>
 
       <Dialog
@@ -81,12 +81,12 @@ function DeleteDepartment({
           }
         }}
       >
-        <DialogTitle>Delete Department</DialogTitle>
+        <DialogTitle>Revoke Admission</DialogTitle>
 
         <DialogContent>
           <DialogContentText>
-            Are you sure you want to delete this department? This action cannot
-            be undone.
+            Are you sure you want Revoke this applicant admission? This action
+            cannot be undone.
           </DialogContentText>
         </DialogContent>
 
@@ -101,7 +101,7 @@ function DeleteDepartment({
             loading={loading}
             onClick={handleDelete}
           >
-            Delete
+            Revoke
           </LoadingButton>
         </DialogActions>
       </Dialog>
@@ -109,4 +109,4 @@ function DeleteDepartment({
   );
 }
 
-export default DeleteDepartment;
+export default Revokeadmission;

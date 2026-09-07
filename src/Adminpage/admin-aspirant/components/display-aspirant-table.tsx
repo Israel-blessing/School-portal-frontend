@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getallenrollment } from "../../api/enrollment.api";
+import { getallenrollment } from "../../../api/enrollment.api";
 import { useNavigate } from "react-router-dom";
 
 interface Displayaspirant {

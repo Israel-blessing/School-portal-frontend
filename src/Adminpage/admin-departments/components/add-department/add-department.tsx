@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { createDepartment } from "../../api/department.api";
-import { getFaculties } from "../../api/faculty.api";
+import { createDepartment } from "../../../../api/department.api";
+import { getFaculties } from "../../../../api/faculty.api";
 import {
   Dialog,
   DialogTitle,

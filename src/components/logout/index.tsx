@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import LoadingButton from "@mui/lab/LoadingButton";
-import { logout } from "../api/auth.api";
+import { logout } from "../../api/auth.api";
 import { useNavigate } from "react-router-dom";
 
 interface LogoutProps {

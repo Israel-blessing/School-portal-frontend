@@ -2,7 +2,7 @@ import logo from "../assets/images/school-logo.jpg";
 import "./home-page.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Logout from "../logout/logout";
+import Logout from "../components/logout";
 // import { useNavigate } from "react-router-dom";
 function Adminsidebar() {
   // const location = useLocation();

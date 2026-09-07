@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { getDepartments } from "../../api/department.api";
-import DeleteDepartment from "./delete-departments";
+import { getDepartments } from "../../../../api/department.api";
+import DeleteDepartment from "../delete-department/delete-departments";
 import { useNavigate } from "react-router-dom";
-import Editdepartment from "./edit-department";
+import Editdepartment from "../edit-department/edit-department";
 
 interface DisplayDepartmentProps {
   refresh: boolean;

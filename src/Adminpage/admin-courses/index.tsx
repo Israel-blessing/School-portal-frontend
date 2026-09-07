@@ -1,14 +1,15 @@
+import "./admin.css";
 import { useState } from "react";
-import Displaydepartments from "./display-department";
-import AddDepartment from "./add-department";
-import "./admin-departments.css"
+import AddCourse from "./components/add-course/add-courses";
+import DisplayCourse from "./components/display-course/display-courses";
 
-function Admindepartments() {
+function AdminCourses() {
   const [openModal, setOpenModal] = useState(false);
+
   const [refresh, setRefresh] = useState(false);
 
-  const refreshDepartments = () => {
-    setRefresh((prev) => !prev);
+  const handleCourseAdded = () => {
+    setRefresh(!refresh);
   };
 
   return (
@@ -16,26 +17,35 @@ function Admindepartments() {
       <div className="school-admin-content">
         <div className="school-admin-body">
           <div className="school-admin-header">
-            <h4>Departments</h4>
+            <h4>Courses</h4>
+
             <p className="new-modal" onClick={() => setOpenModal(true)}>
-              New Department
+              New Course
             </p>
           </div>
+
           <div className="searchbar">
             <input
               className="list-search"
               type="text"
               placeholder="Search this list"
             />
-            <button className="search-btn"> Search</button>
+
+            <button>Search</button>
+            <button> All departments</button>
+            <button> All levels</button>
+            <button> All levels</button>
           </div>
+
           <div>
-            <Displaydepartments refresh={refresh} />
+            <DisplayCourse refresh={refresh} />
           </div>
+
           {openModal && (
-            <AddDepartment
-              refreshDepartments={refreshDepartments}
+            <AddCourse
+              open
               closeModal={() => setOpenModal(false)}
+              onSuccess={handleCourseAdded}
             />
           )}
         </div>
@@ -43,4 +53,5 @@ function Admindepartments() {
     </>
   );
 }
-export default Admindepartments;
+
+export default AdminCourses;

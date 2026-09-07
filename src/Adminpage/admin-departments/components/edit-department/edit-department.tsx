@@ -11,8 +11,8 @@ import {
   MenuItem,
 } from "@mui/material";
 import { useState } from "react";
-import { updatedepartment } from "../../api/department.api";
-import { getFaculties } from "../../api/faculty.api";
+import { updatedepartment } from "../../../../api/department.api";
+import { getFaculties } from "../../../../api/faculty.api";
 import { useEffect } from "react";
 
 interface EditDepartmentProps {
@@ -54,7 +54,7 @@ function Editdepartment({
         console.log(error);
       }
     };
-    fetchfaculties()
+    fetchfaculties();
   }, []);
 
   const handleChange = (

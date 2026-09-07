@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deleteCourse } from "../../api/course.api";
+import { deleteDepartment } from "../../../../api/department.api";
 
 import {
   Button,
@@ -12,37 +12,41 @@ import {
 
 import LoadingButton from "@mui/lab/LoadingButton";
 
-interface DeletecourseProps {
+interface DeleteDepartmentProps {
   id: number;
-  fetchcourse: () => Promise<void>;
-  removecourse: (id: number) => void;
+  fetchDepartments: () => Promise<void>;
+  removeDepartment: (id: number) => void;
 }
 
-function DeleteCourse({ id, fetchcourse, removecourse }: DeletecourseProps) {
+function DeleteDepartment({
+  id,
+  fetchDepartments,
+  removeDepartment,
+}: DeleteDepartmentProps) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleDelete = async () => {
     setLoading(true);
 
-    removecourse(id);
+    removeDepartment(id);
 
     try {
-      const deleted = await deleteCourse(id);
+      const deleted = await deleteDepartment(id);
 
       if (deleted) {
         console.log("Department Deleted");
 
-        await fetchcourse();
+        await fetchDepartments();
 
         setOpen(false);
       } else {
-        await fetchcourse();
+        await fetchDepartments();
       }
     } catch (error) {
       console.log(error);
 
-      await fetchcourse();
+      await fetchDepartments();
     } finally {
       setLoading(false);
     }
@@ -77,12 +81,12 @@ function DeleteCourse({ id, fetchcourse, removecourse }: DeletecourseProps) {
           }
         }}
       >
-        <DialogTitle>Delete Course</DialogTitle>
+        <DialogTitle>Delete Department</DialogTitle>
 
         <DialogContent>
           <DialogContentText>
-            Are you sure you want to delete this Course? This action cannot be
-            undone.
+            Are you sure you want to delete this department? This action cannot
+            be undone.
           </DialogContentText>
         </DialogContent>
 
@@ -105,4 +109,4 @@ function DeleteCourse({ id, fetchcourse, removecourse }: DeletecourseProps) {
   );
 }
 
-export default DeleteCourse;
+export default DeleteDepartment;

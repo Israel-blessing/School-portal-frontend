@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Displaystudentcourse from "./display-studentcourse";
-function StudentCourses() {
+import Displaystudentcoursematerial from "./components/display-student-material";
+function StudentCoursesMaterial() {
   const [refresh] = useState(false);
   return (
     <>
@@ -8,7 +8,7 @@ function StudentCourses() {
         <div className="school-admin-content">
           <div className="school-admin-body">
             <div className="school-admin-header">
-              <h4>Courses</h4>
+              <h4>Course-Materials</h4>
             </div>
 
             <div className="searchbar">
@@ -22,7 +22,7 @@ function StudentCourses() {
               <button> First Semester</button>
             </div>
             <div>
-              <Displaystudentcourse refresh={refresh} />
+              <Displaystudentcoursematerial refresh={refresh} />
             </div>
           </div>
         </div>
@@ -31,4 +31,4 @@ function StudentCourses() {
   );
 }
 
-export default StudentCourses;
+export default StudentCoursesMaterial;

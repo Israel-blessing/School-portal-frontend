@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getcoursematerial } from "../../api/student.api";
+import { getcoursematerial } from "../../../api/student.api";
 
 interface materialprops {
   refresh: boolean;

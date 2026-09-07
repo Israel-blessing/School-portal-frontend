@@ -1,5 +1,5 @@
 import Levelbox from "./components/level-box";
-import "./student-dashboard.css";
+import "./style.css";
 import { getparticularuser } from "../../api/auth.api";
 import { useState, useEffect } from "react";
 import Announcements from "./components/annuncements";
@@ -29,7 +29,10 @@ function StudentDashboard() {
       <div className="student-dashboard-backgrd">
         <div className="student-dashboard-bdy">
           <div className="Student-dashboard-header">
-            <h4> Welcome back {studentinfo?.firstname} {studentinfo?.lastname}</h4>
+            <h4>
+              {" "}
+              Welcome back {studentinfo?.firstname} {studentinfo?.lastname}
+            </h4>
           </div>
           <Levelbox />
           <Announcements />

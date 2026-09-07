@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { getCourses } from "../../api/course.api";
-import Deletecourse from "./delete-courses";
-import EditCourse from "./edit-courses";
+import { getCourses } from "../../../../api/course.api";
+import Deletecourse from "../../components/delete-course/delete-courses";
+import EditCourse from "../../components/edit-course/edit-courses";
 
 interface Course {
   id: number;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { getstudent } from "../../api/student.api";
-import "./student-courses.css";
+import { getstudent } from "../../../api/student.api";
+import "../style.css";
 
 interface DisplayStudentCourseProps {
   refresh: boolean;

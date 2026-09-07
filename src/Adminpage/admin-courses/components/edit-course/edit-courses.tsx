@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { updatecourse } from "../../api/course.api";
-import { getFaculties } from "../../api/faculty.api";
-import { getDepartments } from "../../api/department.api";
-import { getLevels } from "../../api/level.api.";
-import { getLecturers } from "../../api/lecturer.api";
-import { getSemester } from "../../api/semester.api";
+import { updatecourse } from "../../../../api/course.api";
+import { getFaculties } from "../../../../api/faculty.api";
+import { getDepartments } from "../../../../api/department.api";
+import { getLevels } from "../../../../api/level.api.";
+import { getLecturers } from "../../../../api/lecturer.api";
+import { getSemester } from "../../../../api/semester.api";
 
 import {
   Dialog,

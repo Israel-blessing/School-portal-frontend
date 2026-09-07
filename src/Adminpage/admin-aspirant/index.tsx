@@ -1,7 +1,7 @@
 // import "./admin-session.css";
 // import AddsessionsModal from "./add-sessions";
 import { useState } from "react";
-import DisplayAspirant from "./display-aspirant-table";
+import DisplayAspirant from "./components/display-aspirant-table";
 
 function Adminaspirant() {
   // const [openmodal, setopenmodal] = useState(false);

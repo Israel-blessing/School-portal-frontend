@@ -18,15 +18,15 @@ import Profile from "./Aspirantpage/aspirantprofile/Profile";
 // School Admin imports
 import Schooladminhomepage from "./Adminpage/admin-homepage";
 import Adminfaculties from "./Adminpage/admin-faculties/Admin-faculties";
-import Admindepartments from "./Adminpage/admin-departments/admin-department";
+import Admindepartments from "./Adminpage/admin-departments";
 import Adminlevels from "./Adminpage/admin-levels/admin-level";
-import Admincourses from "./Adminpage/admin-courses/admin-courses";
+import Admincourses from "./Adminpage/admin-courses";
 import Adminlecturer from "./Adminpage/admin-lecturer/admin-lecturer";
 import Adminsessions from "./Adminpage/admin-sessions/admin-sessions";
 import Adminstudents from "./Adminpage/admin-student/admin-student";
 
-import Adminaspirant from "./Adminpage/admin-aspirant/admin-aspirant";
-import AspirantDetails from "./Adminpage/admin-aspirant/aspirant-details-page";
+import Adminaspirant from "./Adminpage/admin-aspirant";
+import AspirantDetails from "./Adminpage/admin-aspirant/components/aspirant-details-page";
 import DisplaydepartmentId from "./Adminpage/components/display-departmentsId";
 import DisplaylevelsID from "./Adminpage/components/display-levelsId";
 import DisplaycourseId from "./Adminpage/components/display-courseId";
@@ -39,10 +39,10 @@ import Coursematerial from "./lecturerpage/course-material/coursematerial";
 
 // student pages
 
-import Studenthomepage from "./student-page/student-page";
-import StudentDashboard from "./student-page/student-dashboard/student-dashboard";
-import StudentCourses from "./student-page/student-courses/student-courses";
-import StudentCoursesMaterial from "./student-page/student-course-material/student-material";
+import Studenthomepage from "./student-page";
+import StudentDashboard from "./student-page/student-dashboard";
+import StudentCourses from "./student-page/student-courses";
+import StudentCoursesMaterial from "./student-page/student-course-material";
 function App() {
   return (
     <>
