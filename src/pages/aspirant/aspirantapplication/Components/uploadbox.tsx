@@ -40,31 +40,43 @@ function UploadBox({ title, handleUrl, enrollment }: UploadBoxProps) {
   };
 
   return (
-    <div className="upload-box" onClick={() => fileInputRef.current?.click()}>
-      <div className="Upload-boxess-styling">
-        <input
-          hidden
-          type="file"
-          ref={fileInputRef}
-          onChange={handleFileChange}
-        />
+    <>
+      <div className="upload-box" onClick={() => fileInputRef.current?.click()}>
+        <div className="Upload-boxess-styling">
+          <input
+            hidden
+            type="file"
+            ref={fileInputRef}
+            onChange={handleFileChange}
+          />
 
-        <h3>{title}</h3>
+          <h3>{title}</h3>
 
-        <p>
-          {uploading ? (
-            <>
-              <span className="upload-spinner"></span>
-              Uploading...
-            </>
-          ) : file ? (
-            file.name
-          ) : (
-            "Click to upload"
-          )}
-        </p>
+          <p>
+            {uploading ? (
+              <>
+                <span className="upload-spinner"></span>
+                Uploading...
+              </>
+            ) : file ? (
+              file.name
+            ) : (
+              "Click to upload"
+            )}
+          </p>
+        </div>
       </div>
-    </div>
+
+      {uploadfailed && (
+        <div className="upload-failed-modal">
+          <p className="upload-failed-message">
+            Upload failed. Please try again.
+          </p>
+
+          <button onClick={() => setuploadfailed(false)}>Try again</button>
+        </div>
+      )}
+    </>
   );
 }
 
