@@ -11,7 +11,10 @@ api.interceptors.response.use(
   },
 
   async (error) => {
-    if (error.response?.status === 401) {
+    if (
+      error.response?.status === 401 &&
+      error.config?.url !== "/auth/logout"
+    ) {
       // logout user
       await api.post("/auth/logout");
 

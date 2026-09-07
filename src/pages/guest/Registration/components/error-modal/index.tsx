@@ -15,7 +15,7 @@ function ErrorModal({ open, onClose }: ErrorModalProps) {
   return (
     <>
       <div>
-        <Dialog open={open} onClose={() => {}} maxWidth="sm" fullWidth>
+        <Dialog open={open} maxWidth="sm" fullWidth>
           <DialogTitle>Error</DialogTitle>
           <DialogContent>An error occurred, please try again.</DialogContent>
 
