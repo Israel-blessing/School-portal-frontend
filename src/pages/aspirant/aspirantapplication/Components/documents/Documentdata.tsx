@@ -1,5 +1,5 @@
 import "../../style.css";
-import Document from ".";
+import Document from "./index";
 
 interface Documentdataprops {
   enrollment: any;

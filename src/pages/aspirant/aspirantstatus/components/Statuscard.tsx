@@ -25,14 +25,11 @@ function Statuscard() {
     getEnrollment();
   }, []);
 
-  if (!enrollment) {
-    return <p>Loading...</p>;
-  }
   return (
     <>
       <div className="statuscard">
         <div className="statuscard-one">
-          <p> {enrollment.status}</p>
+          <p> {enrollment.status || "Yet to apply"}</p>
           <p className="second-step">Status</p>
         </div>
         <div className="statuscard-one">
