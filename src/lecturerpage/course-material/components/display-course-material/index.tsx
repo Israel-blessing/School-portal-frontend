@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getallcoursematerial } from "../../api/coursematerial";
-import Deletecoursematerial from "./delete.course-material";
+import { getallcoursematerial } from "../../../../api/coursematerial";
+import Deletecoursematerial from "../delete-course-material";
 // import Coursematerial from "./coursematerial";
 
 interface DisplayCourseMaterialProps {

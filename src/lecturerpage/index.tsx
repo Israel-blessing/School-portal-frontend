@@ -1,7 +1,7 @@
-import "./lecturer-page.css";
+import "./style.css";
 import { Outlet } from "react-router-dom";
-import LecturerSidebar from "./lecturer-sidebar";
-import Topbar from "./lecturer-topbar";
+import LecturerSidebar from "./components/lecturer-sidebar";
+import Topbar from "./components/lecturer-topbar";
 function Lecturerpage() {
   return (
     <>

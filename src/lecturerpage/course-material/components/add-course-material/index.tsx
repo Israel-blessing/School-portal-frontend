@@ -1,11 +1,11 @@
 // import { createCourseMaterial } from "../../api/lecturer.api";
 import { useEffect, useState } from "react";
-import { getlecturercourse } from "../../api/lecturer.api";
+import { getlecturercourse } from "../../../../api/lecturer.api";
 
 import {
   uploadCourseMaterial,
   createCourseMaterial,
-} from "../../api/coursematerial";
+} from "../../../../api/coursematerial";
 import {
   Dialog,
   DialogTitle,

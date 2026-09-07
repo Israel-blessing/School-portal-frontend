@@ -1,7 +1,7 @@
 // import "./lecturer-style.css"
-import Displaycoursematerial from "./display-course-material";
+import Displaycoursematerial from "./components/display-course-material";
 import { useState } from "react";
-import Addcoursematerial from "./add-course-material";
+import Addcoursematerial from "./components/add-course-material";
 function Coursematerial() {
   const [refresh, setRefresh] = useState(false);
   const [open, setOpen] = useState(false);

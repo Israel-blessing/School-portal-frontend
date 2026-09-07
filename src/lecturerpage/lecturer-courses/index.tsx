@@ -1,5 +1,5 @@
-import "./lecturer-style.css";
-import DisplaylecturerCourses from "./display-lecturer-course";
+import "./style.css";
+import DisplaylecturerCourses from "./components/display-lecturer-course";
 import { useState } from "react";
 function Lecturercourses() {
   const [refresh] = useState(false);

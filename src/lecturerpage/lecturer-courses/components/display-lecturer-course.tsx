@@ -1,4 +1,4 @@
-import { getlecturercourse } from "../../api/lecturer.api";
+import { getlecturercourse } from "../../../api/lecturer.api";
 import { useEffect, useState } from "react";
 
 interface DisplaylecturerCourseProps {

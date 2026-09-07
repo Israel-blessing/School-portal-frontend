@@ -32,10 +32,10 @@ import DisplaylevelsID from "./Adminpage/components/displays/display-levelsId";
 import DisplaycourseId from "./Adminpage/components/displays/display-courseId";
 
 // Lectuirer page
-import Lecturerpage from "./lecturerpage/lecturerpage";
-import Lecturerdashboard from "./lecturerpage/lecturer-dashboard/Lecturer-dashboard";
-import Lecturercourses from "./lecturerpage/lecturer-courses/lecturer-courses";
-import Coursematerial from "./lecturerpage/course-material/coursematerial";
+import Lecturerpage from "./lecturerpage";
+import Lecturerdashboard from "./lecturerpage/lecturer-dashboard";
+import Lecturercourses from "./lecturerpage/lecturer-courses";
+import Coursematerial from "./lecturerpage/course-material";
 
 // student pages
 

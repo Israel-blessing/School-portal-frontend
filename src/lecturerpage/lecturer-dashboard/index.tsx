@@ -1,4 +1,4 @@
-import "./dasboard.css";
+import "./style.css";
 import "./components/style.css";
 import "./components/lecturer-box";
 import Lecturerbox from "./components/lecturer-box";

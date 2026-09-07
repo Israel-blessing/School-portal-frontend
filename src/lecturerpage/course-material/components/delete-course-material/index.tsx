@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deletecoursematerial } from "../../api/coursematerial";
+import { deletecoursematerial } from "../../../../api/coursematerial";
 
 import {
   Button,

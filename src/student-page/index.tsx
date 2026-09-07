@@ -1,6 +1,6 @@
 // import Adminsidebar from "./admin-sidebar";
-import Topbar from "./topbar";
-import Studentsidebar from "./student-page-sidebar";
+import Topbar from "./components/topbar";
+import Studentsidebar from "./components/student-sidebar";
 
 import { Outlet } from "react-router-dom";
 

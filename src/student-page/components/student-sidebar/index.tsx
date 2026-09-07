@@ -1,8 +1,8 @@
-import logo from "../assets/images/school-logo.jpg";
+import logo from "../../../assets/images/school-logo.jpg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import "./style.css";
-import Logout from "../components/logout";
+import "../../style.css";
+import Logout from "../../../components/logout";
 
 function Studentsidebar() {
   const [openlogout, setopenlogout] = useState(false);
