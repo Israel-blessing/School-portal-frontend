@@ -335,13 +335,11 @@ form {
 
 .pending-status p {
   font-size: 15px;
-  color: #1f2937;
   margin: 0 0 12px;
 }
 
 .pending-status p:last-child {
   margin-bottom: 0;
-  color: #6b7280;
 }
 
 .upload-failed-modal {
