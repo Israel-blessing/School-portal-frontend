@@ -1,48 +1,48 @@
 import "./App.css";
-import Landingpage from "./landing";
-import Register from "./landing/Registration/sign-up";
-import Loginpage from "./landing/Registration/login";
-import ProgrammePage from "./landing/programme-page";
+import Landingpage from "./pages/guest";
+import Register from "./pages/guest/Registration/sign-up";
+import Loginpage from "./pages/guest/Registration/login";
+import ProgrammePage from "./pages/guest/programme-page";
 import { Routes, Route } from "react-router-dom";
-import AdmissionPage from "./landing/admission";
+import AdmissionPage from "./pages/guest/admission";
 
 // Aspirant imports
-import Aspiranthomepage from "./Aspirantpage";
-import AspirantStatus from "./Aspirantpage/aspirantstatus";
-import Application from "./Aspirantpage/aspirantapplication";
-import Profile from "./Aspirantpage/aspirantprofile/Profile";
+import Aspiranthomepage from "./pages/aspirant";
+import AspirantStatus from "./pages/aspirant/aspirantstatus";
+import Application from "./pages/aspirant/aspirantapplication";
+import Profile from "./pages/aspirant/aspirantprofile/Profile";
 // import Programmedata from "./Aspirantpage/aspirantapplication/Components/programmedata";
 // import Biodata from "./Aspirantpage/aspirantapplication/Components/Biodata";
 // import Documentdata from "./Aspirantpage/aspirantapplication/Components/Documentdata";
 
 // School Admin imports
-import Schooladminhomepage from "./Adminpage";
-import Adminfaculties from "./Adminpage/admin-faculties";
-import Admindepartments from "./Adminpage/admin-departments";
-import Adminlevels from "./Adminpage/admin-levels";
-import Admincourses from "./Adminpage/admin-courses";
-import Adminlecturer from "./Adminpage/admin-lecturer";
-import Adminsessions from "./Adminpage/admin-sessions";
-import Adminstudents from "./Adminpage/admin-student";
+import Schooladminhomepage from "./pages/admin";
+import Adminfaculties from "./pages/admin/admin-faculties";
+import Admindepartments from "./pages/admin/admin-departments";
+import Adminlevels from "./pages/admin/admin-levels";
+import Admincourses from "./pages/admin/admin-courses";
+import Adminlecturer from "./pages/admin/admin-lecturer";
+import Adminsessions from "./pages/admin/admin-sessions";
+import Adminstudents from "./pages/admin/admin-student";
 
-import Adminaspirant from "./Adminpage/admin-aspirant";
-import AspirantDetails from "./Adminpage/admin-aspirant/components/aspirant-details-page";
-import DisplaydepartmentId from "./Adminpage/components/displays/display-departmentsId";
-import DisplaylevelsID from "./Adminpage/components/displays/display-levelsId";
-import DisplaycourseId from "./Adminpage/components/displays/display-courseId";
+import Adminaspirant from "./pages/admin/admin-aspirant";
+import AspirantDetails from "./pages/admin/admin-aspirant/components/aspirant-details-page";
+import DisplaydepartmentId from "./pages/admin/components/displays/display-departmentsId";
+import DisplaylevelsID from "./pages/admin/components/displays/display-levelsId";
+import DisplaycourseId from "./pages/admin/components/displays/display-courseId";
 
 // Lectuirer page
-import Lecturerpage from "./lecturerpage";
-import Lecturerdashboard from "./lecturerpage/lecturer-dashboard";
-import Lecturercourses from "./lecturerpage/lecturer-courses";
-import Coursematerial from "./lecturerpage/course-material";
+import Lecturerpage from "./pages/lecturer";
+import Lecturerdashboard from "./pages/lecturer/lecturer-dashboard";
+import Lecturercourses from "./pages/lecturer/lecturer-courses";
+import Coursematerial from "./pages/lecturer/course-material";
 
 // student pages
 
-import Studenthomepage from "./student-page";
-import StudentDashboard from "./student-page/student-dashboard";
-import StudentCourses from "./student-page/student-courses";
-import StudentCoursesMaterial from "./student-page/student-course-material";
+import Studenthomepage from "./pages/student";
+import StudentDashboard from "./pages/student/student-dashboard";
+import StudentCourses from "./pages/student/student-courses";
+import StudentCoursesMaterial from "./pages/student/student-course-material";
 function App() {
   return (
     <>
