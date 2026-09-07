@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getFaculties } from "../../../../../api/faculty.api";
 import { getDepartments } from "../../../../../api/department.api";
+import { getsession } from "../../../../../api/session.api";
 
 interface Faculty {
   id: number;
@@ -30,6 +31,7 @@ function Programmedetails({
 }: ProgrammeDetailsProps) {
   const [faculties, setFaculties] = useState<Faculty[]>([]);
   const [departments, setDepartments] = useState<Department[]>([]);
+  const [sessionId, setSessionId] = useState<any[]>([]);
 
   useEffect(() => {
     fetchFaculties();
@@ -57,6 +59,19 @@ function Programmedetails({
     }
   };
 
+  useEffect(() => {
+    fetchSessions();
+  }, []);
+
+  const fetchSessions = async () => {
+    try {
+      const response = await getsession();
+      console.log("SESSIONS:", response);
+      setSessionId(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <>
       <div>
@@ -102,6 +117,20 @@ function Programmedetails({
                     ))}
                   </select>
                 </div>
+                <select
+                  name="sessionId"
+                  value={enrollment.sessionId}
+                  onChange={handleSetEnrollment}
+                  required
+                >
+                  <option value="">Select Session</option>
+
+                  {sessionId.map((session) => (
+                    <option key={session.id} value={session.id}>
+                      {session.year}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div className="form-row">

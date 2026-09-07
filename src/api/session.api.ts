@@ -30,3 +30,4 @@ export const updatesession = async (
 ) => {
   return api.patch(`/academic-session/${id}`, data);
 };
+
