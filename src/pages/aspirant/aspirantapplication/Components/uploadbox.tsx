@@ -18,27 +18,34 @@ function UploadBox({ title, handleUrl, enrollment }: UploadBoxProps) {
   const [setUrl] = useState(enrollment);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+const handleFileChange = async (
+  e: React.ChangeEvent<HTMLInputElement>
+) => {
+  if (!e.target.files?.length) return;
 
-  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      const selectedFile = e.target.files[0];
+  const selectedFile = e.target.files[0];
 
-      setFile(selectedFile);
-      setuploading(true);
-      try {
-        const cloudinaryResponse = await uploadFile(selectedFile);
+  setFile(selectedFile);
+  setuploading(true);
+  setuploadfailed(false);
 
-        setUrl(cloudinaryResponse.secure_url);
-        handleUrl(cloudinaryResponse.secure_url);
-        setuploading(false);
-      } catch (error) {
-        console.error("Error uploading file:", error);
-        setFile(null);
-        setuploadfailed(true);
-        setuploading(false);
-      }
-    }
-  };
+  try {
+    const cloudinaryResponse = await uploadFile(selectedFile);
+
+    const url = cloudinaryResponse.secure_url;
+
+    setUrl(url);
+    console.log("URL BEFORE HANDLE:", url);
+    handleUrl(url);
+
+    setuploading(false);
+  } catch (error) {
+    console.error("UPLOAD ERROR:", error);
+    setuploading(false);
+    setuploadfailed(true);
+  }
+};
+
 
   return (
     <>
