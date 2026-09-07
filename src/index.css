@@ -182,7 +182,7 @@ body {
 
 /* nothing yet */
 .empty-table-state {
-  min-height: 280px;
+  min-height: 200px;
   background-color: white;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
