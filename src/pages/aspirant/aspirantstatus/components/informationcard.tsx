@@ -1,7 +1,6 @@
 import "../style.css";
 
 import { useNavigate } from "react-router-dom";
-import Application from "../../aspirantapplication/index";
 
 function Informationcard() {
   const navigate = useNavigate();
