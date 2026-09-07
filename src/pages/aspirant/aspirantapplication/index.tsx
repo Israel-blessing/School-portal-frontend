@@ -192,12 +192,14 @@ function Application() {
   }
   if (isPending) {
     return (
-      <div>
-        <p>
-          Hello {enrollment.firstName} {enrollment.lastName}
-        </p>
-        <p>Your application is under review</p>
-        <p>Kindly checkback later.</p>
+      <div className="pending-status-wrapper">
+        <div className="pending-status">
+          <p>
+            Hello {enrollment.firstName} {enrollment.lastName}
+          </p>
+          <p>Your application is under review</p>
+          <p>Kindly checkback later.</p>
+        </div>
       </div>
     );
   }

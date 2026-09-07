@@ -32,30 +32,19 @@ function Statuscard() {
     <>
       <div className="statuscard">
         <div className="statuscard-one">
-          <p>
-            {" "}
-            <b>{enrollment.status}</b>
-          </p>
+          <p> {enrollment.status}</p>
           <p className="second-step">Status</p>
         </div>
         <div className="statuscard-one">
-          <p>
-            <b>{enrollment.currentStep} of 3</b>{" "}
-          </p>
+          <p>{enrollment.currentStep} of 3 </p>
           <p className="second-step">Steps done</p>
         </div>
         <div className="statuscard-one">
-          <p>
-            {" "}
-            <b>30 of Sept</b>
-          </p>
+          <p> 30 of Sept</p>
           <p className="second-step">Closes</p>
         </div>
         <div className="statuscard-one">
-          <p>
-            {" "}
-            <b>{enrollment.referenceNumber} </b>
-          </p>
+          <p> {enrollment.referenceNumber}</p>
           <p className="second-step">Reference</p>
         </div>
       </div>

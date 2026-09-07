@@ -9,11 +9,12 @@ interface UploadBoxProps {
 }
 
 function UploadBox({ title, handleUrl, enrollment }: UploadBoxProps) {
+  const [uploading, setuploading] = useState(false);
   const [file, setFile] = useState<File | { name: string }>({
     name: enrollment,
   });
 
-  const [setUrl] = useState(enrollment);
+  const [ setUrl] = useState(enrollment);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -22,11 +23,13 @@ function UploadBox({ title, handleUrl, enrollment }: UploadBoxProps) {
       const selectedFile = e.target.files[0];
 
       setFile(selectedFile);
+      setuploading(true);
 
       const cloudinaryResponse = await uploadFile(selectedFile);
 
       setUrl(cloudinaryResponse.secure_url);
       handleUrl(cloudinaryResponse.secure_url);
+      setuploading(false);
     }
   };
 
@@ -42,7 +45,18 @@ function UploadBox({ title, handleUrl, enrollment }: UploadBoxProps) {
 
         <h3>{title}</h3>
 
-        <p>{file ? file.name : "Click to upload"}</p>
+        <p>
+          {uploading ? (
+            <>
+              <span className="upload-spinner"></span>
+              Uploading...
+            </>
+          ) : file ? (
+            file.name
+          ) : (
+            "Click to upload"
+          )}
+        </p>
       </div>
     </div>
   );

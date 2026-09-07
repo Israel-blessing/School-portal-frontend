@@ -1,3 +1,4 @@
+
 import UploadBox from "../uploadbox";
 
 interface DocumentdetailsProps {
@@ -7,6 +8,7 @@ interface DocumentdetailsProps {
 }
 
 function Documents({ enrollment, handleSetEnrollment }: DocumentdetailsProps) {
+ 
   return (
     <div className="upload-container">
       <UploadBox
