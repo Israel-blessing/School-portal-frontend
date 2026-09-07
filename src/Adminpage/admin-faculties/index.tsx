@@ -1,14 +1,14 @@
-import "./style.css";
+import "./style.css"
+// import "./admin-faculties.css";
+import Displayfaculties from "./components/display-faculty";
+import Addfaculty from "./components/add-faculty";
 import { useState } from "react";
-import AddCourse from "./components/add-course";
-import DisplayCourse from "./components/display-course";
 
-function AdminCourses() {
+function Adminfaculties() {
   const [openModal, setOpenModal] = useState(false);
-
   const [refresh, setRefresh] = useState(false);
 
-  const handleCourseAdded = () => {
+  const handleFacultyAdded = () => {
     setRefresh(!refresh);
   };
 
@@ -17,35 +17,27 @@ function AdminCourses() {
       <div className="school-admin-content">
         <div className="school-admin-body">
           <div className="school-admin-header">
-            <h4>Courses</h4>
-
+            <h4>Faculties</h4>
             <p className="new-modal" onClick={() => setOpenModal(true)}>
-              New Course
+              New Faculty
             </p>
           </div>
-
           <div className="searchbar">
             <input
               className="list-search"
               type="text"
               placeholder="Search this list"
             />
-
-            <button>Search</button>
-            <button> All departments</button>
-            <button> All levels</button>
-            <button> All levels</button>
+            <button> Search</button>
           </div>
-
           <div>
-            <DisplayCourse refresh={refresh} />
+            <Displayfaculties refresh={refresh} />
           </div>
-
           {openModal && (
-            <AddCourse
+            <Addfaculty
               open
               closeModal={() => setOpenModal(false)}
-              onSuccess={handleCourseAdded}
+              onSuccess={handleFacultyAdded}
             />
           )}
         </div>
@@ -53,5 +45,4 @@ function AdminCourses() {
     </>
   );
 }
-
-export default AdminCourses;
+export default Adminfaculties;

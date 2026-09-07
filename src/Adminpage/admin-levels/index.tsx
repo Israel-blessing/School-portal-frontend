@@ -1,14 +1,15 @@
 import "./style.css";
+import Displaylevel from "./componenets/display-level";
+import Addlevel from "./componenets/add-level";
 import { useState } from "react";
-import AddCourse from "./components/add-course";
-import DisplayCourse from "./components/display-course";
+// import { getLevels } from "../../api/level.api";
 
-function AdminCourses() {
+function Adminlevels() {
   const [openModal, setOpenModal] = useState(false);
 
   const [refresh, setRefresh] = useState(false);
 
-  const handleCourseAdded = () => {
+  const handleLevelAdded = () => {
     setRefresh(!refresh);
   };
 
@@ -17,35 +18,25 @@ function AdminCourses() {
       <div className="school-admin-content">
         <div className="school-admin-body">
           <div className="school-admin-header">
-            <h4>Courses</h4>
-
+            <h4>Levels</h4>
             <p className="new-modal" onClick={() => setOpenModal(true)}>
-              New Course
+              New Level
             </p>
           </div>
-
           <div className="searchbar">
             <input
               className="list-search"
               type="text"
               placeholder="Search this list"
             />
-
-            <button>Search</button>
-            <button> All departments</button>
-            <button> All levels</button>
-            <button> All levels</button>
+            <button> Search</button>
           </div>
 
-          <div>
-            <DisplayCourse refresh={refresh} />
-          </div>
-
+          <Displaylevel refresh={refresh} />
           {openModal && (
-            <AddCourse
-              open
+            <Addlevel
               closeModal={() => setOpenModal(false)}
-              onSuccess={handleCourseAdded}
+              onSuccess={handleLevelAdded}
             />
           )}
         </div>
@@ -54,4 +45,4 @@ function AdminCourses() {
   );
 }
 
-export default AdminCourses;
+export default Adminlevels;

@@ -4,7 +4,7 @@ import {
   getEnrollmentById,
   approveEnrollment,
 } from "../../../api/enrollment.api";
-import "./admin-aspirant.css";
+import"../style.css";
 import Revokeadmission from "./revokeadmission";
 
 interface DetailsState {

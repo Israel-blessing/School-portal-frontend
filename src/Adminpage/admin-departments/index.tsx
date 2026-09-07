@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Displaydepartments from "./components/display-department/display-department";
-import AddDepartment from "./components/add-department/add-department";
-import "./admin-departments.css";
+import Displaydepartments from "./components/display-department";
+import AddDepartment from "./components/add-department";
+import "./style.css";
 
 function Admindepartments() {
   const [openModal, setOpenModal] = useState(false);

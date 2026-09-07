@@ -16,20 +16,20 @@ import Profile from "./Aspirantpage/aspirantprofile/Profile";
 // import Documentdata from "./Aspirantpage/aspirantapplication/Components/Documentdata";
 
 // School Admin imports
-import Schooladminhomepage from "./Adminpage/admin-homepage";
-import Adminfaculties from "./Adminpage/admin-faculties/Admin-faculties";
+import Schooladminhomepage from "./Adminpage";
+import Adminfaculties from "./Adminpage/admin-faculties";
 import Admindepartments from "./Adminpage/admin-departments";
-import Adminlevels from "./Adminpage/admin-levels/admin-level";
+import Adminlevels from "./Adminpage/admin-levels";
 import Admincourses from "./Adminpage/admin-courses";
-import Adminlecturer from "./Adminpage/admin-lecturer/admin-lecturer";
-import Adminsessions from "./Adminpage/admin-sessions/admin-sessions";
-import Adminstudents from "./Adminpage/admin-student/admin-student";
+import Adminlecturer from "./Adminpage/admin-lecturer";
+import Adminsessions from "./Adminpage/admin-sessions";
+import Adminstudents from "./Adminpage/admin-student";
 
 import Adminaspirant from "./Adminpage/admin-aspirant";
 import AspirantDetails from "./Adminpage/admin-aspirant/components/aspirant-details-page";
-import DisplaydepartmentId from "./Adminpage/components/display-departmentsId";
-import DisplaylevelsID from "./Adminpage/components/display-levelsId";
-import DisplaycourseId from "./Adminpage/components/display-courseId";
+import DisplaydepartmentId from "./Adminpage/components/displays/display-departmentsId";
+import DisplaylevelsID from "./Adminpage/components/displays/display-levelsId";
+import DisplaycourseId from "./Adminpage/components/displays/display-courseId";
 
 // Lectuirer page
 import Lecturerpage from "./lecturerpage/lecturerpage";
