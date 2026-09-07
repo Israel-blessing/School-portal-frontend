@@ -223,6 +223,12 @@ form {
   justify-content: space-between;
 }
 
+.stepper-line {
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 0 12px 22px;
+}
 .step-btn {
   background: none;
   border: none;
