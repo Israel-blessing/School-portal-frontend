@@ -1,66 +1,68 @@
-import TextField from "@mui/material/TextField";
+// import TextField from "@mui/material/TextField";
+import { TextField } from "@mui/material";
 import { useState } from "react";
-import "./registration.css";
-import { login } from "../../api/auth.api";
 import { useNavigate } from "react-router-dom";
+import "../style.css";
+import { registerapi } from "../../../api/auth.api";
 import { MoveLeft } from "lucide-react";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import IconButton from "@mui/material/IconButton";
-import ErrorModal from "./errormodal";
+import SignupModal from "../components/sucess-modal";
+import ErrorModal from "../components/error-modal";
 
-function Loginpage() {
+function Register() {
   const navigate = useNavigate();
+  // const [message, setMessage] = useState("");
   const [formdata, setformdata] = useState({
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
   });
+
   const [loading, setloading] = useState(false);
   const [showpassword, setshowpassword] = useState(false);
+  const [signupSuccess, setSignupSuccess] = useState(false);
   const [signupError, setSignupError] = useState(false);
+  const [emailError, setEmailError] = useState("");
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setformdata({
       ...formdata,
       [e.target.name]: e.target.value,
     });
+    if (e.target.name === "email") {
+      setEmailError("");
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setloading(true);
 
-    console.log("LOGIN DATA:", formdata);
-
     try {
-      const response = await login({
+      const response = await registerapi({
+        firstname: formdata.firstname,
+        lastname: formdata.lastname,
         email: formdata.email,
         password: formdata.password,
       });
 
-      console.log("LOGIN RESPONSE:", response);
+      setSignupSuccess(true);
 
-      const role = response.data.user.role;
-
-      console.log("USER:", response.data.user);
-
-      if (role === "School_Admin") {
-        navigate("/admin");
-      } else if (role === "Aspirant") {
-        navigate("/aspirant");
-      } else if (role === "Lecturer") {
-        navigate("/lecturer");
-      } else if (role === "Student") {
-        navigate("/student");
-      }
+      console.log("SUCCESS:", response.data);
     } catch (error: any) {
-      setSignupError(true);
-      console.log("LOGIN ERROR:", error);
-      console.log("SERVER RESPONSE:", error.response?.data);
+      console.log("ERROR:", error);
+
+      if (error.response?.data?.message === "Email already exists") {
+        setEmailError("Email already exists");
+      } else {
+        setSignupError(true);
+      }
     } finally {
       setloading(false);
     }
   };
-
   return (
     <>
       <div className="arrow-styling">
@@ -73,36 +75,61 @@ function Loginpage() {
         <div className="registrationBox">
           <div className="registrationContent">
             <div className="content-header">
-              <h2>Sign in </h2>
-              <p>One login for student, lecturers, applicants and staff</p>
+              <h2>Create an Account</h2>
+              <p>for prospective students only.Takes about a minute.</p>
             </div>
-
             <form onSubmit={handleSubmit}>
+              {/* <label htmlFor="email">first name</label> */}
+              <TextField
+                className="inputfields"
+                placeholder="first name "
+                variant="outlined"
+                name="firstname"
+                value={formdata.firstname}
+                onChange={handleChange}
+                fullWidth
+                margin="normal"
+                required
+              />
+              <TextField
+                className="inputfields"
+                // label="Last Name"
+                placeholder="last name "
+                variant="outlined"
+                name="lastname"
+                value={formdata.lastname}
+                onChange={handleChange}
+                fullWidth
+                margin="normal"
+                required
+              />
               <TextField
                 className="inputfields"
                 //   label="email"
-                placeholder="email "
+                placeholder="email  "
                 variant="outlined"
                 name="email"
                 value={formdata.email}
                 onChange={handleChange}
-                required
                 fullWidth
                 margin="normal"
+                required
+                error={!!emailError}
               />
+              {emailError && <p className="email-error">{emailError}</p>}
 
               <TextField
                 className="inputfields"
                 //   label="Password"
                 placeholder="password "
                 variant="outlined"
-                type={showpassword ? "text" : "password"}
                 name="password"
+                type={showpassword ? "text" : "password"}
                 value={formdata.password}
                 onChange={handleChange}
-                required
                 fullWidth
                 margin="normal"
+                required
                 slotProps={{
                   input: {
                     endAdornment: (
@@ -116,21 +143,19 @@ function Loginpage() {
                   },
                 }}
               />
-              <button type="submit" disabled={loading} className="Signin-btn">
-                {loading ? "Logging in..." : "Login "}
+              <button type="submit" className="Signin-btn">
+                {loading ? "Creating Account..." : "Create Account"}
               </button>
             </form>
-            <div className="forgot-credentials">
-              <p onClick={() => navigate("/auth/register")}>
-                Create an Account{" "}
-              </p>
-              <p>forget password </p>
-            </div>
+            <p onClick={() => navigate("/auth/login")}>
+              Already have an account?
+            </p>
           </div>
         </div>
       </div>
+      <SignupModal open={signupSuccess} />
       <ErrorModal open={signupError} onClose={() => setSignupError(false)} />
     </>
   );
 }
-export default Loginpage;
+export default Register;

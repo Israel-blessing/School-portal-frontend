@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./componenets/navbar";
 import Banner from "./componenets/banner";
-import "./mainlayout.css";
+import "./style.css";
 import Programmes from "./componenets/programmes";
 
 function Landingpage() {

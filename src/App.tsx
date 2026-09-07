@@ -1,10 +1,10 @@
 import "./App.css";
-import Landingpage from "./landing/mainlayout";
-import Register from "./landing/Registration/register";
+import Landingpage from "./landing";
+import Register from "./landing/Registration/sign-up";
 import Loginpage from "./landing/Registration/login";
-import ProgrammePage from "./landing/Programme page/Programme";
+import ProgrammePage from "./landing/programme-page";
 import { Routes, Route } from "react-router-dom";
-import AdmissionPage from "./landing/Admissons/admissions";
+import AdmissionPage from "./landing/admission";
 
 // Aspirant imports
 import Aspiranthomepage from "./Aspirantpage";

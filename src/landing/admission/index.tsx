@@ -1,5 +1,5 @@
 import Navbar from "../componenets/navbar";
-import "./admission.css";
+import "./style.css";
 import { useNavigate } from "react-router-dom";
 function AdmissionPage() {
   const navigate = useNavigate();

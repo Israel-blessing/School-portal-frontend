@@ -1,5 +1,5 @@
 import Navbar from "../componenets/navbar";
-import "./programme.css";
+import "./style.css";
 
 function ProgrammePage() {
   interface Card {

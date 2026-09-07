@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 // import Register from "../Registration/register";
-import "../mainlayout.css";
+import "../style.css";
 
 function Banner() {
   const navigate = useNavigate();
