@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import "../style.css";
 import { getCurrentEnrollment } from "../../../../api/enrollment.api";
-// interface StatuscardProps {
-//   enrollment: any;
-// }
-function Statuscard() {
+
+interface StatuscardProps {
+  stepsDone: number;
+}
+function Statuscard({ stepsDone }: StatuscardProps) {
   // console.log("ENROLLMENT IN STATUSCARD:", enrollment);
 
   const [enrollment, setEnrollment] = useState<any>(null);
@@ -33,7 +34,7 @@ function Statuscard() {
           <p className="second-step">Status</p>
         </div>
         <div className="statuscard-one">
-          <p>{enrollment?.currentStep || "0"} of 3 </p>
+          <p>{stepsDone || "0"} of 3</p>
           <p className="second-step">Steps done</p>
         </div>
         <div className="statuscard-one">

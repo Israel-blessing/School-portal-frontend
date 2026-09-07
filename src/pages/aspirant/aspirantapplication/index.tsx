@@ -34,6 +34,7 @@ interface IEnrollment {
   waecResult: String;
   jambResult: String;
   sessionId: Number | null;
+  currentStep: number;
 
   status: "PENDING" | "APPROVED" | "REJECTED" | "IN_PROGRESS";
 }
@@ -62,6 +63,7 @@ const enrollmentForm: IEnrollment = {
   birthCertificate: "",
   waecResult: "",
   jambResult: "",
+  currentStep: 1,
 
   status: "IN_PROGRESS",
 };
@@ -71,6 +73,7 @@ function Application() {
   const [errors, setErrors] = useState([]);
   // const [enrollmentId, setenrollmentId] = useState<number | null>(null);
   const [step, setStep] = useState<number>(1);
+  const [ , setStepsDone] = useState<number>(0);
   // const [submiting, setSubmiting] = useState<boolean>(false);
   const [isPending, setIsPending] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
@@ -174,7 +177,13 @@ function Application() {
         if (isSubmit === "submit") {
           setIsPending(true);
         }
-        // setSubmiting(true);
+
+        setenrollment((prev) => ({
+          ...prev,
+          currentStep: next,
+        }));
+        setStepsDone(step);
+
         setStep(next);
       }
     } catch (error: any) {
