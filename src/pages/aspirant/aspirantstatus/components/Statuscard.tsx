@@ -29,11 +29,11 @@ function Statuscard() {
     <>
       <div className="statuscard">
         <div className="statuscard-one">
-          <p> {enrollment.status || "Yet to apply"}</p>
+          <p> {enrollment?.status || "Yet to apply"}</p>
           <p className="second-step">Status</p>
         </div>
         <div className="statuscard-one">
-          <p>{enrollment.currentStep} of 3 </p>
+          <p>{enrollment?.currentStep || "0"} of 3 </p>
           <p className="second-step">Steps done</p>
         </div>
         <div className="statuscard-one">
@@ -41,7 +41,7 @@ function Statuscard() {
           <p className="second-step">Closes</p>
         </div>
         <div className="statuscard-one">
-          <p> {enrollment.referenceNumber}</p>
+          <p> {enrollment?.referenceNumber || "Not available"}</p>
           <p className="second-step">Reference</p>
         </div>
       </div>
