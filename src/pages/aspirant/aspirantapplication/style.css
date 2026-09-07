@@ -220,6 +220,7 @@ form {
   width: 95%;
   padding-left: 32px;
   margin-bottom: 32px;
+  justify-content: space-between;
 }
 
 .step-btn {

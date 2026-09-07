@@ -1,6 +1,7 @@
 import "../style.css";
 
 import { useNavigate } from "react-router-dom";
+import Application from "../../aspirantapplication/index";
 
 function Informationcard() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ function Informationcard() {
           <div className="aspirant-body">
             <div className="aspirant-header">
               <p>Application Checklist</p>
-              <p onClick={() => navigate("/lecturer/courses")}>View All</p>
+              <p onClick={() => navigate("/aspirant/application")}>View All</p>
             </div>
 
             <div className="aspirant-content-one">
