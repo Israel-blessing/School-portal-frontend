@@ -68,7 +68,7 @@ function Application() {
   const [enrollment, setenrollment] = useState(enrollmentForm);
   const [errors, setErrors] = useState([]);
   // const [enrollmentId, setenrollmentId] = useState<number | null>(null);
-  const [step, setStep] = useState<number>();
+  const [step, setStep] = useState<number>(1);
   // const [submiting, setSubmiting] = useState<boolean>(false);
   const [isPending, setIsPending] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
@@ -102,10 +102,10 @@ function Application() {
 
         setStep(1);
       } else {
-        const draft = await startEnrollment();
+        await startEnrollment();
 
         // setenrollmentId(draft.id);
-        setStep(draft.currentStep);
+        setStep(1);
       }
     } catch (error) {
       console.error("Failed to initialize enrollment:", error);
@@ -134,7 +134,7 @@ function Application() {
       if (target === "departmentId") {
         value = Number(value);
       }
-    
+
       return {
         ...prev,
         [e.target.name]: value,
