@@ -17,7 +17,7 @@ function SignupModal({ open }: SignupModalProps) {
   return (
     <>
       <div>
-        <Dialog open={open}>
+        <Dialog open={open} maxWidth="sm" fullWidth>
           <DialogTitle>Signup</DialogTitle>
           <DialogContent>Signup Successful</DialogContent>
 

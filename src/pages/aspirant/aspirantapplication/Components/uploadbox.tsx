@@ -11,7 +11,7 @@ interface UploadBoxProps {
 function UploadBox({ title, handleUrl, enrollment }: UploadBoxProps) {
   const [uploading, setuploading] = useState(false);
   const [uploadfailed, setuploadfailed] = useState(false);
-  const [file, setFile] = useState<File | { name: string }>({
+  const [file, setFile] = useState<File | { name: string } | null>({
     name: enrollment,
   });
 
@@ -33,6 +33,7 @@ function UploadBox({ title, handleUrl, enrollment }: UploadBoxProps) {
         setuploading(false);
       } catch (error) {
         console.error("Error uploading file:", error);
+        setFile(null);
         setuploadfailed(true);
         setuploading(false);
       }
