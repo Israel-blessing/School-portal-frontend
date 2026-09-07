@@ -100,12 +100,12 @@ function Application() {
           setIsPending(true);
         }
 
-        setStep(response.currentStep);
+        setStep(1);
       } else {
         const draft = await startEnrollment();
 
         // setenrollmentId(draft.id);
-        setStep(draft.currentStep);
+        setStep(1);
       }
     } catch (error) {
       console.error("Failed to initialize enrollment:", error);
@@ -134,7 +134,7 @@ function Application() {
       if (target === "departmentId") {
         value = Number(value);
       }
-    
+
       return {
         ...prev,
         [e.target.name]: value,
