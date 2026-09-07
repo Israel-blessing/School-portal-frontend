@@ -117,22 +117,22 @@ function Programmedetails({
                     ))}
                   </select>
                 </div>
-                  <div className="input-group">
-                <select
-                  name="sessionId"
-                  value={enrollment.sessionId}
-                  onChange={handleSetEnrollment}
-                  required
-                >
-                  <option value="">Select Session</option>
-                   <label>Session*</label>
+                <div className="input-group">
+                  <label>Session*</label>
+                  <select
+                    name="sessionId"
+                    value={enrollment.sessionId}
+                    onChange={handleSetEnrollment}
+                    required
+                  >
+                    <option value="">Select Session</option>
 
-                  {sessionId.map((session) => (
-                    <option key={session.id} value={session.id}>
-                      {session.year}
-                    </option>
-                  ))}
-                </select>
+                    {sessionId.map((session) => (
+                      <option key={session.id} value={session.id}>
+                        {session.year}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
 
