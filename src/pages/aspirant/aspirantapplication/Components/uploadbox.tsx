@@ -10,11 +10,12 @@ interface UploadBoxProps {
 
 function UploadBox({ title, handleUrl, enrollment }: UploadBoxProps) {
   const [uploading, setuploading] = useState(false);
+  const [uploadfailed, setuploadfailed] = useState(false);
   const [file, setFile] = useState<File | { name: string }>({
     name: enrollment,
   });
 
-  const [ setUrl] = useState(enrollment);
+  const [setUrl] = useState(enrollment);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -24,12 +25,17 @@ function UploadBox({ title, handleUrl, enrollment }: UploadBoxProps) {
 
       setFile(selectedFile);
       setuploading(true);
+      try {
+        const cloudinaryResponse = await uploadFile(selectedFile);
 
-      const cloudinaryResponse = await uploadFile(selectedFile);
-
-      setUrl(cloudinaryResponse.secure_url);
-      handleUrl(cloudinaryResponse.secure_url);
-      setuploading(false);
+        setUrl(cloudinaryResponse.secure_url);
+        handleUrl(cloudinaryResponse.secure_url);
+        setuploading(false);
+      } catch (error) {
+        console.error("Error uploading file:", error);
+        setuploadfailed(true);
+        setuploading(false);
+      }
     }
   };
 

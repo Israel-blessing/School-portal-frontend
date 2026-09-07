@@ -315,17 +315,31 @@ form {
   }
 }
 
-
 /* pending-status */
 
-.pending-status-wrapper{
-  background-color: white;
+.pending-status-wrapper {
+  width: 100%;
+  min-height: 70vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   justify-content: center;
-
 }
-.pending-status{
 
+.pending-status {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 40px 56px;
+  text-align: center;
+}
+
+.pending-status p {
+  font-size: 15px;
+  color: #1f2937;
+  margin: 0 0 12px;
+}
+
+.pending-status p:last-child {
+  margin-bottom: 0;
+  color: #6b7280;
 }
