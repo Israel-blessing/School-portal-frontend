@@ -33,7 +33,7 @@ interface IEnrollment {
   birthCertificate: String;
   waecResult: String;
   jambResult: String;
-  sessionId: Number | null;
+  sessionId: Number;
   status: "PENDING" | "APPROVED" | "REJECTED" | "IN_PROGRESS";
 }
 
@@ -60,7 +60,7 @@ const enrollmentForm: IEnrollment = {
   birthCertificate: "",
   waecResult: "",
   jambResult: "",
-  sessionId: null,
+  sessionId: 0,
   status: "IN_PROGRESS",
 };
 
