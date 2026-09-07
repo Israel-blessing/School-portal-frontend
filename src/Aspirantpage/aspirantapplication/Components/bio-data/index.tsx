@@ -1,4 +1,4 @@
-import "../application.css";
+import "../../style.css";
 import Personaldetails from "./Bioenrollment";
 // import { Link } from "react-router-dom";
 

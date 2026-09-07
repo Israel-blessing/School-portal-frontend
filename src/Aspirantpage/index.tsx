@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Aspirantsidebar from "./aspirantsidebar";
-import Topbar from "./topbar";
-import "./aspiranthomepage.css";
+import Aspirantsidebar from "./components/sidebar";
+import Topbar from "./components/topbar";
+import "./style.css";
 
 function Aspiranthomepage() {
   return (

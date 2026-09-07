@@ -1,4 +1,4 @@
-import "../application.css";
+import "../../style.css";
 // import { Outlet } from "react-router-dom";
 import Programmedetails from "./programmeenrollmet";
 // import { Link } from "react-router-dom";

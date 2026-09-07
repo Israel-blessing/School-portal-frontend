@@ -1,4 +1,4 @@
-import UploadBox from "./uploadbox";
+import UploadBox from "../uploadbox";
 
 interface DocumentdetailsProps {
   enrollment: any;

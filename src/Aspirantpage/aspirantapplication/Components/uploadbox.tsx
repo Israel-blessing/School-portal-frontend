@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { uploadFile } from "../../../api/upload.api";
-import "../application.css"
+import "../style.css"
 
 interface UploadBoxProps {
   enrollment: any;

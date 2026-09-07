@@ -1,8 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Statuscard from "./Statuscard";
-import Informationcard from "./informationcard"
+import Statuscard from "./components/Statuscard";
+import Informationcard from "./components/informationcard";
 // import { getCurrentEnrollment } from "../../api/enrollment.api";
-
 
 function AspirantStatus() {
   return (
@@ -12,7 +11,7 @@ function AspirantStatus() {
           <p className="Your-application">Your Application</p>
           <Statuscard />
           <Outlet />
-          < Informationcard/>
+          <Informationcard />
         </div>
       </div>
     </>

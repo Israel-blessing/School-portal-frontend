@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getFaculties } from "../../../api/faculty.api";
-import { getDepartments } from "../../../api/department.api";
+import { getFaculties } from "../../../../api/faculty.api";
+import { getDepartments } from "../../../../api/department.api";
 
 interface Faculty {
   id: number;

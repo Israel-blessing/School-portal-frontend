@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import "./status.css";
-import { getCurrentEnrollment } from "../../api/enrollment.api";
+import "../style.css";
+import { getCurrentEnrollment } from "../../../api/enrollment.api";
 // interface StatuscardProps {
 //   enrollment: any;
 // }

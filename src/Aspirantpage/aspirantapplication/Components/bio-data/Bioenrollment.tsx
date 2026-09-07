@@ -1,4 +1,4 @@
-import "../application.css";
+import "../../style.css";
 
 interface PersonalDetailsProps {
   enrollment: any;

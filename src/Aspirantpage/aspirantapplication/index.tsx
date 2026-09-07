@@ -5,10 +5,10 @@ import {
   getCurrentEnrollment,
   updateEnrollment,
 } from "../../api/enrollment.api";
-import "./application.css";
-import Biodata from "./Components/Biodata";
-import Programmedata from "./Components/programmedata";
-import Documentdata from "./Components/Documentdata";
+import "./style.css";
+import Biodata from "./Components/bio-data";
+import Programmedata from "./Components/programme";
+import Documentdata from "./Components/documents/Documentdata";
 
 interface IEnrollment {
   firstName: String;

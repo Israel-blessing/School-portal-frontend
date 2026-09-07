@@ -7,9 +7,9 @@ import { Routes, Route } from "react-router-dom";
 import AdmissionPage from "./landing/Admissons/admissions";
 
 // Aspirant imports
-import Aspiranthomepage from "./Aspirantpage/aspiranthomepage";
-import AspirantStatus from "./Aspirantpage/aspirantstatus/Aspirantstatus";
-import Application from "./Aspirantpage/aspirantapplication/Application";
+import Aspiranthomepage from "./Aspirantpage";
+import AspirantStatus from "./Aspirantpage/aspirantstatus";
+import Application from "./Aspirantpage/aspirantapplication";
 import Profile from "./Aspirantpage/aspirantprofile/Profile";
 // import Programmedata from "./Aspirantpage/aspirantapplication/Components/programmedata";
 // import Biodata from "./Aspirantpage/aspirantapplication/Components/Biodata";

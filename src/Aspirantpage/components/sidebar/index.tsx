@@ -1,8 +1,8 @@
 import { useState } from "react";
-import logo from "../assets/images/school-logo.jpg";
-import "./aspiranthomepage.css";
+import logo from "../../../assets/images/school-logo.jpg";
+import "../../style.css";
 import { Link } from "react-router-dom";
-import Logout from "../components/logout";
+import Logout from "../../../components/logout";
 
 function Aspirantsidebar() {
   const [openlogout, setopenlogout] = useState(false);
