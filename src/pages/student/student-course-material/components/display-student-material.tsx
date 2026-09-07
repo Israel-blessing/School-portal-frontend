@@ -38,6 +38,11 @@ function Displaystudentcoursematerial({ refresh }: materialprops) {
                   <div key={index} className="skeleton-line" />
                 ))}
               </div>
+            ) : maetrial.length === 0 ? (
+              <div className="empty-table-state">
+                <h3>No course materials yet</h3>
+                <p> Check back later </p>
+              </div>
             ) : (
               <table>
                 <thead>

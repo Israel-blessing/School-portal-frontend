@@ -52,6 +52,11 @@ function Displaysessions({ refresh }: DisplaysessionProps) {
                 <div key={index} className="skeleton-line" />
               ))}
             </div>
+          ) : sessions.length === 0 ? (
+            <div className="empty-table-state">
+              <h3>No sessions yet</h3>
+              <p> Add a session </p>
+            </div>
           ) : (
             <table>
               <thead>

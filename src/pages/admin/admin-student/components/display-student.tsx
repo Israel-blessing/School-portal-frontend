@@ -38,7 +38,12 @@ function AdmindisplayStudent({ refresh }: Admindisplayprops) {
                 <div key={index} className="skeleton-line" />
               ))}
             </div>
-          ) : (
+          ) : display.length === 0 ? (
+            <div className="empty-table-state">
+              <h3>No students yet</h3>
+              <p> Wait for applicationss </p>
+            </div>
+          ) :(
             <table>
               <thead>
                 <tr>

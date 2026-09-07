@@ -53,6 +53,11 @@ function DisplayAspirant({ refresh }: DisplaysaspirantProps) {
                   <div key={index} className="skeleton-line" />
                 ))}
               </div>
+            ) : aspirant.length === 0 ? (
+              <div className="empty-table-state">
+                <h3>No applicants yet</h3>
+                <p> Wait for applicants to apply </p>
+              </div>
             ) : (
               <table>
                 <thead>

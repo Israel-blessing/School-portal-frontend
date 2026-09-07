@@ -53,6 +53,11 @@ function Displayfaculties({ refresh }: DisplayFacultyProps) {
                 <div key={index} className="skeleton-line" />
               ))}
             </div>
+          ) : faculties.length === 0 ? (
+            <div className="empty-table-state">
+              <h3>No faculties yet</h3>
+              <p> Add a faculty </p>
+            </div>
           ) : (
             <table>
               <thead>

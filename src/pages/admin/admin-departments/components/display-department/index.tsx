@@ -48,6 +48,11 @@ function Displaydepartments({ refresh }: DisplayDepartmentProps) {
                 <div key={index} className="skeleton-line" />
               ))}
             </div>
+          ) : departments.length === 0 ? (
+            <div className="empty-table-state">
+              <h3>No departments yet</h3>
+              <p> Add a department </p>
+            </div>
           ) : (
             <table>
               <thead>

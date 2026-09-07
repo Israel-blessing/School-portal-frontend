@@ -75,6 +75,11 @@ function DisplayCourse({ refresh }: DisplayCourseProps) {
                 <div key={index} className="skeleton-line" />
               ))}
             </div>
+          ) : courses.length === 0 ? (
+            <div className="empty-table-state">
+              <h3>No courses yet</h3>
+              <p> Add a course </p>
+            </div>
           ) : (
             <table>
               <thead>

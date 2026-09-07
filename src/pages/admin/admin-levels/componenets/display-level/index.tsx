@@ -54,6 +54,11 @@ function Displaylevel({ refresh }: DisplayLevelProps) {
                 <div key={index} className="skeleton-line" />
               ))}
             </div>
+          ) : levels.length === 0 ? (
+            <div className="empty-table-state">
+              <h3>No levels yet</h3>
+              <p> Add a level </p>
+            </div>
           ) : (
             <table>
               <thead>
