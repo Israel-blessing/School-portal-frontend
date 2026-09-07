@@ -110,11 +110,17 @@ function Programmedetails({
                   >
                     <option value="">Select Department*</option>
 
-                    {departments.map((department) => (
-                      <option key={department.id} value={department.id}>
-                        {department.name}
-                      </option>
-                    ))}
+                    {departments
+                      .filter(
+                        (department) =>
+                          department.faculty.id ===
+                          Number(enrollment.facultyId),
+                      )
+                      .map((department) => (
+                        <option key={department.id} value={department.id}>
+                          {department.name}
+                        </option>
+                      ))}
                   </select>
                 </div>
                 <div className="input-group">
